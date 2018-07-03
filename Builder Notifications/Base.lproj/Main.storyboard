@@ -25,7 +25,7 @@
                                     <navigationItem title="Builders Notifications" id="Xec-9e-KKH"/>
                                 </items>
                             </navigationBar>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-xH-ugk">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your E-Mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="GRO-xH-ugk">
                                 <rect key="frame" x="16" y="112" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
@@ -67,6 +67,8 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="loginEmail" destination="GRO-xH-ugk" id="jle-Lj-Xju"/>
+                        <outlet property="loginPassword" destination="KqH-7Q-EvB" id="aed-8b-12e"/>
                         <outlet property="userName" destination="0dL-nX-ere" id="Nzh-D1-Z1j"/>
                     </connections>
                 </viewController>
@@ -123,8 +125,15 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Your E-Mail Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4xs-sv-aUq">
+                                <rect key="frame" x="16" y="301" width="343" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vPH-Cg-lay">
-                                <rect key="frame" x="14" y="319" width="343" height="30"/>
+                                <rect key="frame" x="16" y="358" width="343" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
@@ -136,6 +145,7 @@
                         <viewLayoutGuide key="safeArea" id="7wf-pY-zpD"/>
                     </view>
                     <connections>
+                        <outlet property="registerEmail" destination="4xs-sv-aUq" id="YYY-8z-CPC"/>
                         <outlet property="registerJobSite" destination="Dt6-6t-IUV" id="Wis-DZ-Pkw"/>
                         <outlet property="registerName" destination="wLK-tw-Wit" id="5FF-PG-fld"/>
                         <outlet property="registerPassword" destination="Z9s-hV-ReY" id="fSJ-Pf-J7n"/>
