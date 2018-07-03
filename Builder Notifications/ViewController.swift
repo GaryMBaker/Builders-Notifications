@@ -26,7 +26,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginEmail: UITextField?
     @IBOutlet weak var loginPassword: UITextField?
     
-    
     var handle: AuthStateDidChangeListenerHandle?
 
     @IBAction func likedThis(sender: UIButton) {
@@ -34,15 +33,26 @@ class ViewController: UIViewController {
         let password: String = loginPassword!.text!
         let email: String = loginEmail!.text!
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-            // ...
-            self.userName?.text = "Sucessfully signed in!"
+            if user != nil {
+                self.userName?.text = "Sucessfully signed in!"
+                
+                let storyboard = UIStoryboard(name: "Authenticated", bundle: nil)
+                let vc = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController") as UIViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+            } else {
+                self.userName?.text = "There was a problem"
+            }
         }
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        do {
+            try Auth.auth().signOut()
+        }catch{
+            print("Error while signing out!")
+        }
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -56,7 +66,6 @@ class ViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             print("User Created");
         }
-        
         Database.database().reference().child("users").child("Gary").setValue(["Username": uname, "Name": name, "Job Site": jobsite])
     }
 
@@ -64,7 +73,6 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
     
     override func viewWillAppear(_ animated: Bool) {
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in

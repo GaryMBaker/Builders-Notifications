@@ -24,6 +24,8 @@
 		ED4AC20920EB2C8800B5DBFB /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC20720EB2C8700B5DBFB /* GTMSessionFetcher.framework */; };
 		ED4AC20A20EB2C8800B5DBFB /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC20820EB2C8800B5DBFB /* FirebaseAuth.framework */; };
 		ED86D26920EB59810062DD24 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED86D26820EB59810062DD24 /* leveldb.framework */; };
+		ED86D27020EB902E0062DD24 /* AuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86D26F20EB902E0062DD24 /* AuthenticatedViewController.swift */; };
+		ED86D27220EB97E60062DD24 /* Authenticated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED86D27120EB97E60062DD24 /* Authenticated.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +77,8 @@
 		ED4AC20820EB2C8800B5DBFB /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
 		ED4AC20C20EB2D0A00B5DBFB /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
 		ED86D26820EB59810062DD24 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED86D26F20EB902E0062DD24 /* AuthenticatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewController.swift; sourceTree = "<group>"; };
+		ED86D27120EB97E60062DD24 /* Authenticated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authenticated.storyboard; sourceTree = "<group>"; };
 		EDFE34A420EB393000913A74 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = ../../../Downloads/Firebase/Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -173,6 +177,8 @@
 				EDFE34A420EB393000913A74 /* Firebase.h */,
 				ED4AC1D120EA01B100B5DBFB /* ViewController.swift */,
 				ED4AC1D320EA01B100B5DBFB /* Main.storyboard */,
+				ED86D27120EB97E60062DD24 /* Authenticated.storyboard */,
+				ED86D26F20EB902E0062DD24 /* AuthenticatedViewController.swift */,
 				ED4AC1D620EA01B300B5DBFB /* Assets.xcassets */,
 				ED4AC1D820EA01B300B5DBFB /* LaunchScreen.storyboard */,
 				ED4AC1DB20EA01B300B5DBFB /* Info.plist */,
@@ -309,6 +315,7 @@
 				ED4AC1DA20EA01B300B5DBFB /* LaunchScreen.storyboard in Resources */,
 				ED4AC1FE20EB29B600B5DBFB /* GoogleService-Info.plist in Resources */,
 				ED4AC1D720EA01B300B5DBFB /* Assets.xcassets in Resources */,
+				ED86D27220EB97E60062DD24 /* Authenticated.storyboard in Resources */,
 				ED4AC1D520EA01B100B5DBFB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +423,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED86D27020EB902E0062DD24 /* AuthenticatedViewController.swift in Sources */,
 				ED4AC1D220EA01B100B5DBFB /* ViewController.swift in Sources */,
 				ED4AC1D020EA01B100B5DBFB /* AppDelegate.swift in Sources */,
 			);
