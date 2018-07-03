@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		75AF02190B88D9F430A1F34B /* Pods_Builder_NotificationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633C81CF22382B3E0DDF9A8B /* Pods_Builder_NotificationsTests.framework */; };
+		9BF438232D0557F34BFEB948 /* Pods_Builder_Notifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4641719E1D26245646A76AC /* Pods_Builder_Notifications.framework */; };
+		A4309D6905F6FEDCEA97D55F /* Pods_Builder_NotificationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3F5E98AA03F8919DF73873 /* Pods_Builder_NotificationsUITests.framework */; };
 		ED4AC1D020EA01B100B5DBFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AC1CF20EA01B100B5DBFB /* AppDelegate.swift */; };
 		ED4AC1D220EA01B100B5DBFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AC1D120EA01B100B5DBFB /* ViewController.swift */; };
 		ED4AC1D520EA01B100B5DBFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4AC1D320EA01B100B5DBFB /* Main.storyboard */; };
@@ -14,6 +17,13 @@
 		ED4AC1DA20EA01B300B5DBFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4AC1D820EA01B300B5DBFB /* LaunchScreen.storyboard */; };
 		ED4AC1E520EA01B300B5DBFB /* Builder_NotificationsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AC1E420EA01B300B5DBFB /* Builder_NotificationsTests.swift */; };
 		ED4AC1F020EA01B300B5DBFB /* Builder_NotificationsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AC1EF20EA01B300B5DBFB /* Builder_NotificationsUITests.swift */; };
+		ED4AC1FE20EB29B600B5DBFB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ED4AC1FD20EB29B500B5DBFB /* GoogleService-Info.plist */; };
+		ED4AC20120EB2C6500B5DBFB /* FirebaseDatabase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC1FF20EB2C6400B5DBFB /* FirebaseDatabase.framework */; };
+		ED4AC20520EB2C7400B5DBFB /* Protobuf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC20320EB2C7400B5DBFB /* Protobuf.framework */; };
+		ED4AC20620EB2C7500B5DBFB /* FirebaseMessaging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC20420EB2C7400B5DBFB /* FirebaseMessaging.framework */; };
+		ED4AC20920EB2C8800B5DBFB /* GTMSessionFetcher.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC20720EB2C8700B5DBFB /* GTMSessionFetcher.framework */; };
+		ED4AC20A20EB2C8800B5DBFB /* FirebaseAuth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED4AC20820EB2C8800B5DBFB /* FirebaseAuth.framework */; };
+		ED86D26920EB59810062DD24 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED86D26820EB59810062DD24 /* leveldb.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +44,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1A3F5E98AA03F8919DF73873 /* Pods_Builder_NotificationsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Builder_NotificationsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		36111C37E51174682562F28D /* Pods-Builder Notifications.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder Notifications.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Builder Notifications/Pods-Builder Notifications.debug.xcconfig"; sourceTree = "<group>"; };
+		54C1ABD3994306ADF28119C2 /* Pods-Builder NotificationsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder NotificationsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Builder NotificationsTests/Pods-Builder NotificationsTests.release.xcconfig"; sourceTree = "<group>"; };
+		633C81CF22382B3E0DDF9A8B /* Pods_Builder_NotificationsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Builder_NotificationsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		709301EE346F05C28953BAF8 /* Pods-Builder NotificationsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder NotificationsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Builder NotificationsTests/Pods-Builder NotificationsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		71C2626A578947F43A94705D /* Pods-Builder NotificationsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder NotificationsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Builder NotificationsUITests/Pods-Builder NotificationsUITests.release.xcconfig"; sourceTree = "<group>"; };
+		D4641719E1D26245646A76AC /* Pods_Builder_Notifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Builder_Notifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C99BED8424C9BA63E2DB12 /* Pods-Builder Notifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder Notifications.release.xcconfig"; path = "Pods/Target Support Files/Pods-Builder Notifications/Pods-Builder Notifications.release.xcconfig"; sourceTree = "<group>"; };
+		DBE57A97558EE94840AF2FC2 /* Pods-Builder NotificationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder NotificationsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Builder NotificationsUITests/Pods-Builder NotificationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED4AC1CC20EA01B100B5DBFB /* Builder Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Builder Notifications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4AC1CF20EA01B100B5DBFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4AC1D120EA01B100B5DBFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +66,16 @@
 		ED4AC1EB20EA01B300B5DBFB /* Builder NotificationsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Builder NotificationsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4AC1EF20EA01B300B5DBFB /* Builder_NotificationsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Builder_NotificationsUITests.swift; sourceTree = "<group>"; };
 		ED4AC1F120EA01B300B5DBFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ED4AC1FD20EB29B500B5DBFB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ED4AC1FF20EB2C6400B5DBFB /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseDatabase.framework; sourceTree = "<group>"; };
+		ED4AC20020EB2C6500B5DBFB /* leveldb-library.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = "leveldb-library.framework"; sourceTree = "<group>"; };
+		ED4AC20320EB2C7400B5DBFB /* Protobuf.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Protobuf.framework; sourceTree = "<group>"; };
+		ED4AC20420EB2C7400B5DBFB /* FirebaseMessaging.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseMessaging.framework; sourceTree = "<group>"; };
+		ED4AC20720EB2C8700B5DBFB /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = "<group>"; };
+		ED4AC20820EB2C8800B5DBFB /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = "<group>"; };
+		ED4AC20C20EB2D0A00B5DBFB /* module.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = module.modulemap; sourceTree = "<group>"; };
+		ED86D26820EB59810062DD24 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EDFE34A420EB393000913A74 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = ../../../Downloads/Firebase/Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +83,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED86D26920EB59810062DD24 /* leveldb.framework in Frameworks */,
+				ED4AC20120EB2C6500B5DBFB /* FirebaseDatabase.framework in Frameworks */,
+				ED4AC20620EB2C7500B5DBFB /* FirebaseMessaging.framework in Frameworks */,
+				ED4AC20A20EB2C8800B5DBFB /* FirebaseAuth.framework in Frameworks */,
+				ED4AC20520EB2C7400B5DBFB /* Protobuf.framework in Frameworks */,
+				ED4AC20920EB2C8800B5DBFB /* GTMSessionFetcher.framework in Frameworks */,
+				9BF438232D0557F34BFEB948 /* Pods_Builder_Notifications.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75AF02190B88D9F430A1F34B /* Pods_Builder_NotificationsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,12 +105,43 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4309D6905F6FEDCEA97D55F /* Pods_Builder_NotificationsUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D107EA2134F1AB168238FCA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				ED86D26820EB59810062DD24 /* leveldb.framework */,
+				ED4AC20820EB2C8800B5DBFB /* FirebaseAuth.framework */,
+				ED4AC20720EB2C8700B5DBFB /* GTMSessionFetcher.framework */,
+				ED4AC20420EB2C7400B5DBFB /* FirebaseMessaging.framework */,
+				ED4AC20320EB2C7400B5DBFB /* Protobuf.framework */,
+				ED4AC1FF20EB2C6400B5DBFB /* FirebaseDatabase.framework */,
+				ED4AC20020EB2C6500B5DBFB /* leveldb-library.framework */,
+				D4641719E1D26245646A76AC /* Pods_Builder_Notifications.framework */,
+				633C81CF22382B3E0DDF9A8B /* Pods_Builder_NotificationsTests.framework */,
+				1A3F5E98AA03F8919DF73873 /* Pods_Builder_NotificationsUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7850477CC8F01628108DF886 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				36111C37E51174682562F28D /* Pods-Builder Notifications.debug.xcconfig */,
+				D6C99BED8424C9BA63E2DB12 /* Pods-Builder Notifications.release.xcconfig */,
+				709301EE346F05C28953BAF8 /* Pods-Builder NotificationsTests.debug.xcconfig */,
+				54C1ABD3994306ADF28119C2 /* Pods-Builder NotificationsTests.release.xcconfig */,
+				DBE57A97558EE94840AF2FC2 /* Pods-Builder NotificationsUITests.debug.xcconfig */,
+				71C2626A578947F43A94705D /* Pods-Builder NotificationsUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		ED4AC1C320EA01B100B5DBFB = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +149,8 @@
 				ED4AC1E320EA01B300B5DBFB /* Builder NotificationsTests */,
 				ED4AC1EE20EA01B300B5DBFB /* Builder NotificationsUITests */,
 				ED4AC1CD20EA01B100B5DBFB /* Products */,
+				7850477CC8F01628108DF886 /* Pods */,
+				2D107EA2134F1AB168238FCA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,7 +167,10 @@
 		ED4AC1CE20EA01B100B5DBFB /* Builder Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				ED4AC1FD20EB29B500B5DBFB /* GoogleService-Info.plist */,
+				ED4AC20C20EB2D0A00B5DBFB /* module.modulemap */,
 				ED4AC1CF20EA01B100B5DBFB /* AppDelegate.swift */,
+				EDFE34A420EB393000913A74 /* Firebase.h */,
 				ED4AC1D120EA01B100B5DBFB /* ViewController.swift */,
 				ED4AC1D320EA01B100B5DBFB /* Main.storyboard */,
 				ED4AC1D620EA01B300B5DBFB /* Assets.xcassets */,
@@ -132,9 +205,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED4AC1F420EA01B300B5DBFB /* Build configuration list for PBXNativeTarget "Builder Notifications" */;
 			buildPhases = (
+				B4D936BD78A253A377B00F4A /* [CP] Check Pods Manifest.lock */,
 				ED4AC1C820EA01B100B5DBFB /* Sources */,
 				ED4AC1C920EA01B100B5DBFB /* Frameworks */,
 				ED4AC1CA20EA01B100B5DBFB /* Resources */,
+				3432EDC1954FB58C914EE2DB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -149,6 +224,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED4AC1F720EA01B300B5DBFB /* Build configuration list for PBXNativeTarget "Builder NotificationsTests" */;
 			buildPhases = (
+				0AF0F0DA1E0266145D34BDAF /* [CP] Check Pods Manifest.lock */,
 				ED4AC1DC20EA01B300B5DBFB /* Sources */,
 				ED4AC1DD20EA01B300B5DBFB /* Frameworks */,
 				ED4AC1DE20EA01B300B5DBFB /* Resources */,
@@ -167,6 +243,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ED4AC1FA20EA01B300B5DBFB /* Build configuration list for PBXNativeTarget "Builder NotificationsUITests" */;
 			buildPhases = (
+				1931C1E19E18B9A8B0C77D44 /* [CP] Check Pods Manifest.lock */,
 				ED4AC1E720EA01B300B5DBFB /* Sources */,
 				ED4AC1E820EA01B300B5DBFB /* Frameworks */,
 				ED4AC1E920EA01B300B5DBFB /* Resources */,
@@ -230,6 +307,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED4AC1DA20EA01B300B5DBFB /* LaunchScreen.storyboard in Resources */,
+				ED4AC1FE20EB29B600B5DBFB /* GoogleService-Info.plist in Resources */,
 				ED4AC1D720EA01B300B5DBFB /* Assets.xcassets in Resources */,
 				ED4AC1D520EA01B100B5DBFB /* Main.storyboard in Resources */,
 			);
@@ -250,6 +328,88 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0AF0F0DA1E0266145D34BDAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Builder NotificationsTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1931C1E19E18B9A8B0C77D44 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Builder NotificationsUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3432EDC1954FB58C914EE2DB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Builder Notifications/Pods-Builder Notifications-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Builder Notifications/Pods-Builder Notifications-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B4D936BD78A253A377B00F4A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Builder Notifications-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		ED4AC1C820EA01B100B5DBFB /* Sources */ = {
@@ -428,10 +588,20 @@
 		};
 		ED4AC1F520EA01B300B5DBFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 36111C37E51174682562F28D /* Pods-Builder Notifications.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F7RQ63MT2X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+				);
 				INFOPLIST_FILE = "Builder Notifications/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,10 +616,20 @@
 		};
 		ED4AC1F620EA01B300B5DBFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C99BED8424C9BA63E2DB12 /* Pods-Builder Notifications.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = F7RQ63MT2X;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+					"$(PROJECT_DIR)/Builder\\ Notifications",
+				);
 				INFOPLIST_FILE = "Builder Notifications/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -464,6 +644,7 @@
 		};
 		ED4AC1F820EA01B300B5DBFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 709301EE346F05C28953BAF8 /* Pods-Builder NotificationsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -485,6 +666,7 @@
 		};
 		ED4AC1F920EA01B300B5DBFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54C1ABD3994306ADF28119C2 /* Pods-Builder NotificationsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +688,7 @@
 		};
 		ED4AC1FB20EA01B300B5DBFB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DBE57A97558EE94840AF2FC2 /* Pods-Builder NotificationsUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -526,6 +709,7 @@
 		};
 		ED4AC1FC20EA01B300B5DBFB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 71C2626A578947F43A94705D /* Pods-Builder NotificationsUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

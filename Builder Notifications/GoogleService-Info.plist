@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>184904612529-4ctcbhgoj629gs558r8c4s0fvjn3p638.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.184904612529-4ctcbhgoj629gs558r8c4s0fvjn3p638</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDzfcM8VV8QL9YOFrPDorVVilb8eNYP4BE</string>
+	<key>GCM_SENDER_ID</key>
+	<string>184904612529</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>me.garybaker.Builder-Notifications</string>
+	<key>PROJECT_ID</key>
+	<string>builders-notifications</string>
+	<key>STORAGE_BUCKET</key>
+	<string>builders-notifications.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:184904612529:ios:4a6f654511ef99ef</string>
+	<key>DATABASE_URL</key>
+	<string>https://builders-notifications.firebaseio.com</string>
+</dict>
+</plist>
