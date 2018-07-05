@@ -11,11 +11,10 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class ViewController: UIViewController {
-    
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+
+    @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var likeButton: UIButton?
-    @IBOutlet weak var userName: UILabel?
-    @IBOutlet weak var passWord: UIInputView?
     
     @IBOutlet weak var  registerUsername: UITextField?
     @IBOutlet weak var  registerPassword: UITextField?
@@ -27,34 +26,45 @@ class ViewController: UIViewController {
     @IBOutlet weak var loginPassword: UITextField?
     
     var handle: AuthStateDidChangeListenerHandle?
+    var pickOption = ["one", "two", "three", "seven", "fifteen"]
+    
 
-    @IBAction func likedThis(sender: UIButton) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        var pickerView = UIPickerView()
+        pickerView.delegate = self
+        pickerTextField?.inputView = pickerView
+    }
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return pickOption.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return pickOption[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        pickerTextField!.text = pickOption[row]
+    }
+    
+    
+    @IBAction func userLogin(sender: UIButton) {
         
         let password: String = loginPassword!.text!
         let email: String = loginEmail!.text!
         Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
             if user != nil {
-                self.userName?.text = "Sucessfully signed in!"
-                
-                let storyboard = UIStoryboard(name: "Authenticated", bundle: nil)
-                let vc = storyboard.instantiateViewController(withIdentifier: "AuthenticatedViewController") as UIViewController
-                self.navigationController?.pushViewController(vc, animated: true)
-            } else {
-                self.userName?.text = "There was a problem"
+                self.performSegue(withIdentifier: "AuthenticatedSegue", sender: nil)
             }
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        do {
-            try Auth.auth().signOut()
-        }catch{
-            print("Error while signing out!")
-        }
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
     @IBAction func userRegistered(sender: UIButton) {
         let uname: String = registerUsername!.text!
@@ -62,11 +72,13 @@ class ViewController: UIViewController {
         let name: String = registerName!.text!
         let jobsite: String = registerJobSite!.text!
         let email: String = registerEmail!.text!
-        
+
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             print("User Created");
+            
+            let userID = Auth.auth().currentUser!.uid
+            Database.database().reference().child("users").child(userID).setValue(["Username": uname, "Name": name, "Job Site": jobsite])
         }
-        Database.database().reference().child("users").child("Gary").setValue(["Username": uname, "Name": name, "Job Site": jobsite])
     }
 
     override func didReceiveMemoryWarning() {
