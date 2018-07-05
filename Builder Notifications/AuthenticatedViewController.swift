@@ -18,14 +18,17 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var locationTextField: UITextField?
 
     @IBOutlet weak var  post: UITextField?
+    @IBOutlet weak var  location: UITextField?
     
-    var pickOption = ["one", "two", "three", "seven", "fifteen"]
+    var handle = DatabaseHandle()
+    var pickOption = [String]()
     
     @IBAction func sendPost(sender: UIButton) {
         let post: String = self.post!.text!
         let userID = Auth.auth().currentUser!.uid
         let userName = Auth.auth().currentUser!.displayName
-        Database.database().reference().child("notifications").child(userID).setValue(["Name": userName, "Post": post])
+
+        Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
     }
     
     @IBAction func authLogout(sender: UIButton) {
@@ -38,7 +41,8 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func addLocation(sender: UIButton) {
-        Database.database().reference().child("locations").child(self.locationTextField!.text!).setValue(["location": self.locationTextField!.text!])
+        let location: String = self.location!.text!
+        Database.database().reference().child("locations").childByAutoId().setValue(["location": location])
     }
     
     @IBAction func removeLocation(sender: UIButton) {
@@ -53,12 +57,18 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         pickerView.delegate = self
         self.pickerTextField?.inputView = pickerView
         
-//        let ref = Database.database().reference().child("locations").child("Remuera Road")
-//        ref.observe(DataEventType.childAdded) {
-//            (snapshot : DataSnapshot) in
-//            let location = snapshot.value(forKeyPath: "location") as! String
-//            self.pickerTextField!.text = location
-//         }
+        let ref = Database.database().reference()
+        
+        handle = ref.child("locations").observe(.childAdded) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot {
+                    if let data = snap.value as? String {
+                        self.pickOption.append(data)
+                    }
+                }
+            }
+        }
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

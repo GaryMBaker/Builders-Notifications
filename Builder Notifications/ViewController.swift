@@ -26,15 +26,28 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var loginPassword: UITextField?
     
     var handle: AuthStateDidChangeListenerHandle?
-    var pickOption = ["one", "two", "three", "seven", "fifteen"]
     
+    var handleDB = DatabaseHandle()
+    var pickOption = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        var pickerView = UIPickerView()
+        let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerTextField?.inputView = pickerView
+        
+        let ref = Database.database().reference()
+        
+        handleDB = ref.child("locations").observe(.childAdded) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot {
+                    if let data = snap.value as? String {
+                        self.pickOption.append(data)
+                    }
+                }
+            }
+        }
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
