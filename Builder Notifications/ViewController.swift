@@ -82,6 +82,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 
     @IBAction func userRegistered(sender: UIButton) {
+        let uname: String = registerUsername!.text!
         let password: String = registerPassword!.text!
         let name: String = registerName!.text!
         let jobsite: String = registerJobSite!.text!
@@ -91,7 +92,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("User Created");
             
             let userID = Auth.auth().currentUser!.uid
-            Database.database().reference().child("users").child(userID).setValue([ "Name": name, "Job Site": jobsite])
+            Database.database().reference().child("users").child(userID).setValue(["Username": uname, "Name": name, "Job Site": jobsite])
         }
     }
     override func didReceiveMemoryWarning() {
@@ -109,10 +110,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-    registerName?.resignFirstResponder()
-    registerPassword?.resignFirstResponder()
-    registerEmail?.resignFirstResponder()
-    pickerTextField?.resignFirstResponder()
+        registerName?.resignFirstResponder()
+        registerPassword?.resignFirstResponder()
+        registerEmail?.resignFirstResponder()
+        pickerTextField?.resignFirstResponder()
     
         return true
     }
