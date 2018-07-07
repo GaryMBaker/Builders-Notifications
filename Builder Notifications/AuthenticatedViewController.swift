@@ -28,6 +28,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         let userID = Auth.auth().currentUser!.uid
         let userName = Auth.auth().currentUser!.displayName
 
+
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
     }
     
