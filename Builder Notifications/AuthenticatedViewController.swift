@@ -34,7 +34,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
 
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
     }
- 
+ //test commit
    
     @IBAction func authLogout(sender: UIButton) {
         
