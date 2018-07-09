@@ -23,13 +23,38 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var  post: UITextField?
     @IBOutlet weak var  location: UITextField?
     
+
     var handle = DatabaseHandle()
     var pickOption = [String]()
     
+    @IBAction func forgotPasswordTapped(_ sender: Any) {
+        let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = "Enter email address"
+        }
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Reset Password", style: .default, handler: { (action) in
+            let resetEmail = forgotPasswordAlert.textFields?.first?.text
+            Auth.auth().sendPasswordReset(withEmail: resetEmail!, completion: { (error) in
+                if error != nil{
+                    let resetFailedAlert = UIAlertController(title: "Reset Failed", message: "Error: \(String(describing: error?.localizedDescription))", preferredStyle: .alert)
+                    resetFailedAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetFailedAlert, animated: true, completion: nil)
+                }else {
+                    let resetEmailSentAlert = UIAlertController(title: "Reset email sent successfully", message: "Check your email", preferredStyle: .alert)
+                    resetEmailSentAlert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(resetEmailSentAlert, animated: true, completion: nil)
+                }
+            })
+        }))
+        //PRESENT ALERT
+        self.present(forgotPasswordAlert, animated: true, completion: nil)
+    }
+    
     @IBAction func sendPost(sender: UIButton) {
         let post: String = self.post!.text!
-        let userID = Auth.auth().currentUser!.uid
-        let userName = Auth.auth().currentUser!.displayName
+        _ = Auth.auth().currentUser!.uid
+        _ = Auth.auth().currentUser!.displayName
 
 
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
