@@ -11,7 +11,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var likeButton: UIButton?
@@ -32,13 +32,15 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerTextField?.inputView = pickerView
         
         let ref = Database.database().reference()
-        
+        registerEmail?.delegate = self
+        registerPassword?.delegate = self
+        registerName?.delegate = self
         handleDB = ref.child("locations").observe(.childAdded) { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
                 for snap in snapshot {
@@ -92,7 +94,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             Database.database().reference().child("users").child(userID).setValue(["Username": uname, "Name": name, "Job Site": jobsite])
         }
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -106,6 +107,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     override func viewWillDisappear(_ animated: Bool) {
         Auth.auth().removeStateDidChangeListener(handle!)
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        registerName?.resignFirstResponder()
+        registerPassword?.resignFirstResponder()
+        registerEmail?.resignFirstResponder()
+        pickerTextField?.resignFirstResponder()
+    
+        return true
     }
 }
 

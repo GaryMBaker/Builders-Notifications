@@ -16,7 +16,10 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
-
+    @IBOutlet weak var  registerPassword: UITextField?
+    @IBOutlet weak var  registerName: UITextField?
+    @IBOutlet weak var  registerJobSite: UITextField?
+    @IBOutlet weak var  registerEmail: UITextField?
     @IBOutlet weak var  post: UITextField?
     @IBOutlet weak var  location: UITextField?
     
@@ -28,9 +31,11 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         let userID = Auth.auth().currentUser!.uid
         let userName = Auth.auth().currentUser!.displayName
 
+
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
     }
-    
+ //test commit
+   
     @IBAction func authLogout(sender: UIButton) {
         
         do {
@@ -39,7 +44,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
             print("Error while signing out!")
         }
     }
-    
+  
     @IBAction func addLocation(sender: UIButton) {
         let location: String = self.location!.text!
         Database.database().reference().child("locations").childByAutoId().setValue(["location": location])
@@ -51,6 +56,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         
         // Do any additional setup after loading the view, typically from a nib.
         let pickerView = UIPickerView()
