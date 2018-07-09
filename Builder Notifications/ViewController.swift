@@ -80,7 +80,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
 
     @IBAction func userRegistered(sender: UIButton) {
-        let uname: String = registerUsername!.text!
         let password: String = registerPassword!.text!
         let name: String = registerName!.text!
         let jobsite: String = registerJobSite!.text!
