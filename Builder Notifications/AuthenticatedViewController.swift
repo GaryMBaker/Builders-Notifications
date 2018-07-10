@@ -16,17 +16,14 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
-    @IBOutlet weak var  registerPassword: UITextField?
-    @IBOutlet weak var  registerName: UITextField?
-    @IBOutlet weak var  registerJobSite: UITextField?
-    @IBOutlet weak var  registerEmail: UITextField?
     @IBOutlet weak var  post: UITextField?
     @IBOutlet weak var  location: UITextField?
-    
+ 
 
     var handle = DatabaseHandle()
     var pickOption = [String]()
     
+
     @IBAction func forgotPasswordTapped(_ sender: Any) {
         let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
         forgotPasswordAlert.addTextField { (textField) in
@@ -55,8 +52,6 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         let post: String = self.post!.text!
         _ = Auth.auth().currentUser!.uid
         _ = Auth.auth().currentUser!.displayName
-
-
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
     }
  //test commit
@@ -82,12 +77,11 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         // Do any additional setup after loading the view, typically from a nib.
         let pickerView = UIPickerView()
         pickerView.delegate = self
         self.pickerTextField?.inputView = pickerView
-        
+     
         let ref = Database.database().reference()
         
         handle = ref.child("locations").observe(.childAdded) { (snapshot) in
@@ -99,7 +93,6 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
                 }
             }
         }
-        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
