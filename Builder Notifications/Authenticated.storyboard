@@ -239,7 +239,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Delete Location"/>
                                 <connections>
-                                    <action selector="addLocationWithSender:" destination="rqV-KQ-jt2" eventType="touchUpInside" id="8eq-ZX-DJh"/>
+                                    <action selector="removeLocationWithSender:" destination="rqV-KQ-jt2" eventType="touchUpInside" id="bXn-kv-dxm"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-ZT-bCU">
@@ -278,7 +278,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WVO-gL-YSb"/>
+        <segue reference="PDH-7B-I10"/>
         <segue reference="NCB-hJ-RR6"/>
     </inferredMetricsTieBreakers>
 </document>

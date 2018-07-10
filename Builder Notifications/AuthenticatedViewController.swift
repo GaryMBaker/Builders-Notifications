@@ -27,7 +27,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     var handle = DatabaseHandle()
     var notificationHandler = DatabaseHandle()
     var pickOption = [String]()
-    var notifications = [String]()
+    var notificationList = [String]()
     
     
     @IBAction func forgotPasswordTapped(_ sender: Any) {
@@ -55,15 +55,14 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func sendPost(sender: UIButton) {
-        let post: String = self.post!.text!
-        _ = Auth.auth().currentUser!.uid
-        _ = Auth.auth().currentUser!.displayName
-
-
+        let post: String? = self.post!.text!
+        
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
+        
+        
+        Messaging.messaging().sendMessage(["body" : "messageData"], to: "184904612529@gcm.googleapis.com", withMessageID: "messageId", timeToLive: 200)
     }
- //test commit
-   
+ 
     @IBAction func authLogout(sender: UIButton) {
         
         do {
@@ -79,12 +78,20 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func removeLocation(sender: UIButton) {
+        var ref = Database.database().reference().child("locations").childByAutoId();
+        
+        let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = "Enter email address"
+        }
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        
         
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -94,21 +101,24 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         let ref = Database.database().reference()
         
-        handle = ref.child("locations").observe(.childAdded) { (snapshot) in
-            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
-                for snap in snapshot {
-                    if let data = snap.value as? String {
-                        self.pickOption.append(data)
-                    }
-                }
-            }
-        }
+        let tableView = UITableView()
+        tableView.delegate = self
         
         notificationHandler = ref.child("notifications").observe(.childAdded) { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
                 for snap in snapshot {
                     if let data = snap.value as? String {
-                        self.notifications.append(data)
+                        self.notificationList.append(data)
+                    }
+                }
+            }
+        }
+        
+        handle = ref.child("locations").observe(.childAdded) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot {
+                    if let data = snap.value as? String {
+                        self.pickOption.append(data)
                     }
                 }
             }
@@ -120,12 +130,12 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return notificationList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell();
-        cell.textLabel?.text = "blah"
+        cell.textLabel?.text = notificationList[indexPath.row]
         
         return cell
     }

@@ -28,7 +28,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var handle: AuthStateDidChangeListenerHandle?
     
     var handleDB = DatabaseHandle()
+    var notificationHandler = DatabaseHandle()
     var pickOption = [String]()
+    var notificationList = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +52,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
                 }
             }
         }
+        
+        
+        notificationHandler = ref.child("notifications").observe(.childAdded) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot {
+                    if let data = snap.value as? String {
+                        self.notificationList.append(data)
+                    }
+                }
+            }
+        }
+        
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
