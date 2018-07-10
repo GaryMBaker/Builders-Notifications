@@ -13,6 +13,17 @@ import FirebaseDatabase
 import FirebaseAuth
 
 class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return notificationList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell()
+        cell.textLabel?.text = notificationList[indexPath.row]
+        return cell
+    }
+    
+    
 
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
