@@ -30,6 +30,10 @@
                                 <rect key="frame" x="0.0" y="121" width="375" height="546"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="4BC-PO-UGd" id="Sbp-lf-rdA"/>
+                                    <outlet property="delegate" destination="4BC-PO-UGd" id="hpd-g0-rOd"/>
+                                </connections>
                             </tableView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EwF-oR-aNF">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -235,7 +239,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Delete Location"/>
                                 <connections>
-                                    <action selector="addLocationWithSender:" destination="rqV-KQ-jt2" eventType="touchUpInside" id="8eq-ZX-DJh"/>
+                                    <action selector="removeLocationWithSender:" destination="rqV-KQ-jt2" eventType="touchUpInside" id="bXn-kv-dxm"/>
                                 </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yyw-ZT-bCU">
@@ -274,7 +278,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WVO-gL-YSb"/>
+        <segue reference="PDH-7B-I10"/>
         <segue reference="NCB-hJ-RR6"/>
     </inferredMetricsTieBreakers>
 </document>

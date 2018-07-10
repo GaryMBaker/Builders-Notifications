@@ -12,7 +12,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
@@ -21,7 +21,10 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
  
 
     var handle = DatabaseHandle()
+    var notificationHandler = DatabaseHandle()
     var pickOption = [String]()
+    var notificationList = [String]()
+    
     
 
     @IBAction func forgotPasswordTapped(_ sender: Any) {
@@ -53,9 +56,11 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         _ = Auth.auth().currentUser!.uid
         _ = Auth.auth().currentUser!.displayName
         Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
+        
+        
+        Messaging.messaging().sendMessage(["body" : "messageData"], to: "184904612529@gcm.googleapis.com", withMessageID: "messageId", timeToLive: 200)
     }
- //test commit
-   
+ 
     @IBAction func authLogout(sender: UIButton) {
         
         do {
@@ -71,6 +76,15 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     @IBAction func removeLocation(sender: UIButton) {
+        var ref = Database.database().reference().child("locations").childByAutoId();
+        
+        let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
+        forgotPasswordAlert.addTextField { (textField) in
+            textField.placeholder = "Enter email address"
+        }
+        forgotPasswordAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        
         
     }
 
@@ -78,11 +92,25 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         super.viewDidLoad()
         
         // Do any additional setup after loading the view, typically from a nib.
+        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         self.pickerTextField?.inputView = pickerView
      
         let ref = Database.database().reference()
+        
+        let tableView = UITableView()
+        tableView.delegate = self
+        
+        notificationHandler = ref.child("notifications").observe(.childAdded) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot {
+                    if let data = snap.value as? String {
+                        self.notificationList.append(data)
+                    }
+                }
+            }
+        }
         
         handle = ref.child("locations").observe(.childAdded) { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
