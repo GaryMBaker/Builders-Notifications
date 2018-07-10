@@ -12,7 +12,7 @@ import Firebase
 import FirebaseDatabase
 import FirebaseAuth
 
-class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource  {
+class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITableViewDelegate, UITableViewDataSource {
 
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
@@ -23,8 +23,12 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var  post: UITextField?
     @IBOutlet weak var  location: UITextField?
     
+    
     var handle = DatabaseHandle()
+    var notificationHandler = DatabaseHandle()
     var pickOption = [String]()
+    var notifications = [String]()
+    
     
     @IBAction func sendPost(sender: UIButton) {
         let post: String = self.post!.text!
@@ -59,6 +63,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         
         // Do any additional setup after loading the view, typically from a nib.
+        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         self.pickerTextField?.inputView = pickerView
@@ -75,6 +80,30 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
             }
         }
         
+        notificationHandler = ref.child("notifications").observe(.childAdded) { (snapshot) in
+            if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
+                for snap in snapshot {
+                    if let data = snap.value as? String {
+                        self.notifications.append(data)
+                    }
+                }
+            }
+        }
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell();
+        cell.textLabel?.text = "blah"
+        
+        return cell
     }
     
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
