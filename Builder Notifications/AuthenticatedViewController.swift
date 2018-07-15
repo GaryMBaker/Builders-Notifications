@@ -23,8 +23,11 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         return cell
     }
     
+    @IBOutlet weak var pickerView: UIPickerView!
+    @IBOutlet weak var NewTxtEmail: UITextField!
     
 
+    @IBOutlet weak var lblUpdateEmailStatus: UILabel!
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
     @IBOutlet weak var  post: UITextField?
@@ -36,7 +39,16 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     var pickOption = [String]()
     var notificationList = [String]()
     
-    
+    @IBAction func UpdateEmail(_ sender: Any) {
+        let user = Auth.auth().currentUser
+        user?.updateEmail(to: NewTxtEmail.text!) { error in
+            if error != nil {
+                self.lblUpdateEmailStatus.text = "Error"
+            } else {
+                self.lblUpdateEmailStatus.text = "Email updated."
+            }
+        }
+    }
 
     @IBAction func forgotPasswordTapped(_ sender: Any) {
         let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
