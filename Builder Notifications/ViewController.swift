@@ -103,7 +103,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             print("User Created");
             
             let userID = Auth.auth().currentUser!.uid
-            Database.database().reference().child("users").child(userID).setValue(["Username": uname, "Name": name, "Job Site": jobsite])
+            Database.database().reference().child("users").child(userID).setValue([",Name": name, "Job Site": jobsite])
         }
     }
     override func didReceiveMemoryWarning() {

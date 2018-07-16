@@ -143,6 +143,7 @@
                                 </state>
                                 <connections>
                                     <action selector="userRegisteredWithSender:" destination="RAo-eq-BCN" eventType="touchUpInside" id="jVO-22-haj"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Be2-yF-iVW"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCd-4o-pNu">
@@ -203,4 +204,7 @@
             <point key="canvasLocation" x="846" y="184"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="E3p-RO-P5C"/>
+    </inferredMetricsTieBreakers>
 </document>
