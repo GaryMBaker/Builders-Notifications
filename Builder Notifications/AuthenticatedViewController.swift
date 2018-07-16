@@ -159,7 +159,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerTextField!.text = pickOption[row]
+        pickerTextField?.text = pickOption[row]
     }
     
     override func didReceiveMemoryWarning() {

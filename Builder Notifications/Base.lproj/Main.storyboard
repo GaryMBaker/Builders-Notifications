@@ -58,13 +58,14 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <state key="normal" title="Don't have an account yet?"/>
                                 <connections>
-                                    <segue destination="RAo-eq-BCN" kind="show" id="VAx-fV-d0C"/>
+                                    <segue destination="RAo-eq-BCN" kind="show" id="722-IJ-7nZ"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="O7e-ui-HBp"/>
                     <connections>
                         <outlet property="loginEmail" destination="GRO-xH-ugk" id="jle-Lj-Xju"/>
                         <outlet property="loginPassword" destination="KqH-7Q-EvB" id="aed-8b-12e"/>
@@ -181,8 +182,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="vrd-2L-zm8"/>
                     <connections>
-                        <outlet property="pickerTextField" destination="Dt6-6t-IUV" id="FRT-6j-JDY"/>
                         <outlet property="registerEmail" destination="4xs-sv-aUq" id="YYY-8z-CPC"/>
                         <outlet property="registerJobSite" destination="Dt6-6t-IUV" id="Wis-DZ-Pkw"/>
                         <outlet property="registerName" destination="wLK-tw-Wit" id="5FF-PG-fld"/>

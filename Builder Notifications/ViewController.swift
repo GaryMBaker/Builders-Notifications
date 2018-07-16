@@ -14,9 +14,7 @@ import FirebaseAuth
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
     @IBOutlet weak var pickerTextField: UITextField?
-    @IBOutlet weak var likeButton: UIButton?
-    
-    @IBOutlet weak var  registerUsername: UITextField?
+
     @IBOutlet weak var  registerPassword: UITextField?
     @IBOutlet weak var  registerName: UITextField?
     @IBOutlet weak var  registerJobSite: UITextField?
@@ -79,7 +77,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        pickerTextField!.text = pickOption[row]
+        pickerTextField?.text = pickOption[row]
     }
     
     
