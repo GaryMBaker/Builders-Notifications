@@ -13,8 +13,10 @@ import FirebaseAuth
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var pickerTextField: UITextField?
 
+    @IBOutlet weak var jobsite: UITextField!
+    @IBOutlet weak var pickerTextField: UITextField!
+    
     @IBOutlet weak var  registerPassword: UITextField?
     @IBOutlet weak var  registerName: UITextField?
     @IBOutlet weak var  registerJobSite: UITextField?
@@ -96,14 +98,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func userRegistered(sender: UIButton) {
         let password: String = registerPassword!.text!
         let name: String = registerName!.text!
-        let jobsite: String = registerJobSite!.text!
+        let jobsite: String = self.jobsite!.text!
         let email: String = registerEmail!.text!
 
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             print("User Created");
             
             let userID = Auth.auth().currentUser!.uid
-            Database.database().reference().child("users").child(userID).setValue([",Name": name, "Job Site": jobsite])
+            Database.database().reference().child("users").child(userID).setValue(["Name": name, "Job Site": jobsite])
         }
     }
     override func didReceiveMemoryWarning() {
