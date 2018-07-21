@@ -13,8 +13,10 @@ import FirebaseAuth
 
 class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate {
 
-    @IBOutlet weak var pickerTextField: UITextField?
 
+    @IBOutlet weak var jobsite: UITextField!
+    @IBOutlet weak var pickerTextField: UITextField!
+    
     @IBOutlet weak var  registerPassword: UITextField?
     @IBOutlet weak var  registerName: UITextField?
     @IBOutlet weak var  registerJobSite: UITextField?
@@ -30,12 +32,37 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var pickOption = [String]()
     var notificationList = [String]()
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        let toolbar = UIToolbar(frame: CGRect(x:0,y: 0,width:self.view.frame.size.width, height:40))
+        toolbar.barStyle = UIBarStyle.blackTranslucent
+        toolbar.tintColor = UIColor.white
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(ViewController.donePressed(sender:)))
+        
+        let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        
+        let label = UILabel(frame: CGRect(x: 0,y: 0, width:self.view.frame.size.width/3, height: 40))
+        
+        label.font = UIFont.systemFont(ofSize: 14)
+        
+        label.textColor = UIColor.yellow
+        
+        label.textAlignment = NSTextAlignment.center
+        
+        label.text = "Jobsite"
+        
+        let labelButton = UIBarButtonItem(customView: label)
+        
+        toolbar.setItems([flexButton, flexButton, labelButton, flexButton, doneButton], animated:true)
+        
+        pickerTextField?.inputAccessoryView = toolbar
+        
         let pickerView = UIPickerView()
         pickerView.delegate = self
         pickerTextField?.inputView = pickerView
+      
         
         let ref = Database.database().reference()
         registerEmail?.delegate = self
@@ -79,10 +106,14 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerTextField?.text = pickOption[row]
     }
+<<<<<<< HEAD
     
     
     
     
+=======
+ 
+>>>>>>> 59d412e00dc49c3dd94e61e4b521b40d0623ef96
     @IBAction func userLogin(sender: UIButton) {
         
         let password: String = loginPassword!.text!
@@ -97,7 +128,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func userRegistered(sender: UIButton) {
         let password: String = registerPassword!.text!
         let name: String = registerName!.text!
-        let jobsite: String = registerJobSite!.text!
+        let jobsite: String = self.jobsite!.text!
         let email: String = registerEmail!.text!
         
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -110,7 +141,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             
             let userID = Auth.auth().currentUser!.uid
+<<<<<<< HEAD
             Database.database().reference().child("users").child(userID).setValue(["Name": name, "Job Site": jobsite, "messaging_token": Messaging.messaging().fcmToken!, "user_id": userID])
+=======
+            Database.database().reference().child("users").child(userID).setValue(["Name": name, "Job Site": jobsite])
+>>>>>>> 59d412e00dc49c3dd94e61e4b521b40d0623ef96
         }
     }
     
@@ -135,6 +170,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         pickerTextField?.resignFirstResponder()
     
         return true
+    }
+    @objc func donePressed(sender: UIBarButtonItem) {
+        pickerTextField.resignFirstResponder()
     }
 }
 
