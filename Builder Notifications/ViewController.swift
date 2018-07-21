@@ -163,7 +163,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         return true
     }
     @objc func donePressed(sender: UIBarButtonItem) {
-        pickerTextField.resignFirstResponder()
+        pickerTextField?.resignFirstResponder()
     }
 }
 
