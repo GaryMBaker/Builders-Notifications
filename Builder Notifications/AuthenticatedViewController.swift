@@ -23,10 +23,12 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         return cell
     }
     
+    @IBOutlet weak var jobsite: UITextField!
     @IBOutlet weak var pickerView: UIPickerView!
     @IBOutlet weak var NewTxtEmail: UITextField!
     
 
+    @IBOutlet weak var pickerUpdateTextField: UITextField!
     @IBOutlet weak var lblUpdateEmailStatus: UILabel!
     @IBOutlet weak var pickerTextField: UITextField?
     @IBOutlet weak var locationTextField: UITextField?
@@ -55,6 +57,15 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
     }
 
+    
+    @IBAction func UpdateLocation(_ sender: Any) {
+        let jobsite: String = self.jobsite!.text!
+        
+        let userID = Auth.auth().currentUser!.uid
+        Database.database().reference().child("users").child(userID).child("Job Site").setValue([jobsite])
+        
+    }
+    
     @IBAction func forgotPasswordTapped(_ sender: Any) {
         let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
         forgotPasswordAlert.addTextField { (textField) in
@@ -147,7 +158,31 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         let pickerView = UIPickerView()
         pickerView.delegate = self
         self.pickerTextField?.inputView = pickerView
-     
+        self.pickerUpdateTextField?.inputView = pickerView
+        
+        let toolbar = UIToolbar(frame: CGRect(x:0,y: 0,width:self.view.frame.size.width, height:40))
+        toolbar.barStyle = UIBarStyle.blackTranslucent
+        toolbar.tintColor = UIColor.white
+        
+        let doneButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.done, target: self, action: #selector(ViewController.donePressed(sender:)))
+        
+        let flexButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: self, action: nil)
+        
+        let label = UILabel(frame: CGRect(x: 0,y: 0, width:self.view.frame.size.width/3, height: 40))
+        
+        label.font = UIFont.systemFont(ofSize: 14)
+        
+        label.textColor = UIColor.yellow
+        
+        label.textAlignment = NSTextAlignment.center
+        
+        label.text = "Jobsite"
+        
+        let labelButton = UIBarButtonItem(customView: label)
+        
+        toolbar.setItems([flexButton, flexButton, labelButton, flexButton, doneButton], animated:true)
+        pickerUpdateTextField?.inputAccessoryView = toolbar
+        pickerTextField?.inputAccessoryView = toolbar
         let ref = Database.database().reference()
         
         let tableView = UITableView()
@@ -190,10 +225,15 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerTextField?.text = pickOption[row]
+        pickerUpdateTextField?.text = pickOption[row]
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @objc func donePressed(sender: UIBarButtonItem) {
+        pickerTextField?.resignFirstResponder()
+        pickerUpdateTextField?.resignFirstResponder()
     }
 }
