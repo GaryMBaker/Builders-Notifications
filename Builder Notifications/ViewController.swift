@@ -106,14 +106,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         pickerTextField?.text = pickOption[row]
     }
-<<<<<<< HEAD
-    
-    
-    
-    
-=======
- 
->>>>>>> 59d412e00dc49c3dd94e61e4b521b40d0623ef96
+
     @IBAction func userLogin(sender: UIButton) {
         
         let password: String = loginPassword!.text!
@@ -141,11 +134,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             }
             
             let userID = Auth.auth().currentUser!.uid
-<<<<<<< HEAD
+
             Database.database().reference().child("users").child(userID).setValue(["Name": name, "Job Site": jobsite, "messaging_token": Messaging.messaging().fcmToken!, "user_id": userID])
-=======
             Database.database().reference().child("users").child(userID).setValue(["Name": name, "Job Site": jobsite])
->>>>>>> 59d412e00dc49c3dd94e61e4b521b40d0623ef96
         }
     }
     
