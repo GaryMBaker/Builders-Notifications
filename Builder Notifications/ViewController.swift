@@ -81,6 +81,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     }
     
     
+    
+    
     @IBAction func userLogin(sender: UIButton) {
         
         let password: String = loginPassword!.text!
@@ -92,20 +94,26 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
     }
     
-
     @IBAction func userRegistered(sender: UIButton) {
         let password: String = registerPassword!.text!
         let name: String = registerName!.text!
         let jobsite: String = registerJobSite!.text!
         let email: String = registerEmail!.text!
-
+        
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             print("User Created");
             
+            if let user = user {
+                let changeRequest = user.createProfileChangeRequest()
+                changeRequest.displayName = name
+                changeRequest.commitChanges(completion: { error in })
+            }
+            
             let userID = Auth.auth().currentUser!.uid
-            Database.database().reference().child("users").child(userID).setValue([",Name": name, "Job Site": jobsite])
+            Database.database().reference().child("users").child(userID).setValue(["Name": name, "Job Site": jobsite, "messaging_token": Messaging.messaging().fcmToken!, "user_id": userID])
         }
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

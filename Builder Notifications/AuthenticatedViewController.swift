@@ -32,12 +32,17 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
     @IBOutlet weak var locationTextField: UITextField?
     @IBOutlet weak var  post: UITextField?
     @IBOutlet weak var  location: UITextField?
- 
+    
+    let messageData = "This is a test of data"
 
     var handle = DatabaseHandle()
     var notificationHandler = DatabaseHandle()
     var pickOption = [String]()
     var notificationList = [String]()
+    
+    let adminDBConn = Database.database().reference().child("admins")
+    
+    
     
     @IBAction func UpdateEmail(_ sender: Any) {
         let user = Auth.auth().currentUser
@@ -78,12 +83,15 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         let post: String = self.post!.text!
         _ = Auth.auth().currentUser!.uid
         _ = Auth.auth().currentUser!.displayName
-        Database.database().reference().child("notifications").childByAutoId().setValue(["post": post])
         
-        
-        Messaging.messaging().sendMessage(["body" : "messageData"], to: "184904612529@gcm.googleapis.com", withMessageID: "messageId", timeToLive: 200)
+        if (Messaging.messaging().isDirectChannelEstablished) {
+            Database.database().reference().child("admins").child(Auth.auth().currentUser!.uid).child("notifications").childByAutoId().setValue(["message": post])
+            Messaging.messaging().sendMessage(["body": "test"], to: "184904612529@fcm.googleapis.com/fcm/", withMessageID: UUID().uuidString, timeToLive: 0)
+        } else {
+            print("not connected")
+        }
     }
- 
+    
     @IBAction func authLogout(sender: UIButton) {
         
         do {
@@ -93,13 +101,33 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         }
     }
   
+    @IBAction func connectToAdmin(sender: UIButton) {
+        
+        
+        // should be very close to this line of code
+        // Database.database().reference().child("admins").child((Auth.auth().currentUser!.uid)).child("usersToken").setValue(Messaging.messaging().fcmToken!)
+        
+    }
+    
+    @IBAction func becomeAdmin(sender: UIButton) {
+        adminDBConn.child(Auth.auth().currentUser!.uid).child("details").setValue(["name": Auth.auth().currentUser?.displayName, "uid": Auth.auth().currentUser?.uid])
+        
+        Database.database().reference().child("users").child(Auth.auth().currentUser!.uid).setValue(["Name": Auth.auth().currentUser?.displayName as String?,"messaging_token": Messaging.messaging().fcmToken! as String?, "user_id": Auth.auth().currentUser?.uid, "isAdmin": true])
+    }
+    
+    @IBAction func followAdmin(sender: UIButton) {
+        adminDBConn.child("tFWARdKPjwR2ZUQ6hWZt4CY5xVZ2").child("followers").child(Auth.auth().currentUser!.displayName!).setValue(["name": Auth.auth().currentUser?.displayName!, "token": Messaging.messaging().fcmToken!, "uid": Auth.auth().currentUser?.uid, "accepted": "false"])
+    }
+    
     @IBAction func addLocation(sender: UIButton) {
         let location: String = self.location!.text!
         Database.database().reference().child("locations").childByAutoId().setValue(["location": location])
+        adminDBConn.child("tFWARdKPjwR2ZUQ6hWZt4CY5xVZ2").child("location").setValue(["location": location])
     }
     
     @IBAction func removeLocation(sender: UIButton) {
-        var ref = Database.database().reference().child("locations").childByAutoId();
+        
+        var ref = Database.database().reference().child("location").childByAutoId();
         
         let forgotPasswordAlert = UIAlertController(title: "Forgot password?", message: "Enter email address", preferredStyle: .alert)
         forgotPasswordAlert.addTextField { (textField) in
@@ -125,7 +153,8 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
         let tableView = UITableView()
         tableView.delegate = self
         
-        notificationHandler = ref.child("notifications").observe(.childAdded) { (snapshot) in
+        notificationHandler = ref.child("admins").child("tFWARdKPjwR2ZUQ6hWZt4CY5xVZ2").child("notifications").observe(.childAdded) { (snapshot) in
+        
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{
                 for snap in snapshot {
                     if let data = snap.value as? String {
@@ -134,6 +163,7 @@ class AuthenticatedViewController: UIViewController, UIPickerViewDelegate, UIPic
                 }
             }
         }
+        
         
         handle = ref.child("locations").observe(.childAdded) { (snapshot) in
             if let snapshot = snapshot.children.allObjects as? [DataSnapshot]{

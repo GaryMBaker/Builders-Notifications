@@ -10,6 +10,7 @@
 		75AF02190B88D9F430A1F34B /* Pods_Builder_NotificationsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 633C81CF22382B3E0DDF9A8B /* Pods_Builder_NotificationsTests.framework */; };
 		9BF438232D0557F34BFEB948 /* Pods_Builder_Notifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4641719E1D26245646A76AC /* Pods_Builder_Notifications.framework */; };
 		A4309D6905F6FEDCEA97D55F /* Pods_Builder_NotificationsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A3F5E98AA03F8919DF73873 /* Pods_Builder_NotificationsUITests.framework */; };
+		ED0111312101895800D6790F /* IMG_2498.PNG in Resources */ = {isa = PBXBuildFile; fileRef = ED0111302101895700D6790F /* IMG_2498.PNG */; };
 		ED4AC1D020EA01B100B5DBFB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AC1CF20EA01B100B5DBFB /* AppDelegate.swift */; };
 		ED4AC1D220EA01B100B5DBFB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED4AC1D120EA01B100B5DBFB /* ViewController.swift */; };
 		ED4AC1D520EA01B100B5DBFB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED4AC1D320EA01B100B5DBFB /* Main.storyboard */; };
@@ -26,6 +27,8 @@
 		ED86D26920EB59810062DD24 /* leveldb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED86D26820EB59810062DD24 /* leveldb.framework */; };
 		ED86D27020EB902E0062DD24 /* AuthenticatedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED86D26F20EB902E0062DD24 /* AuthenticatedViewController.swift */; };
 		ED86D27220EB97E60062DD24 /* Authenticated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED86D27120EB97E60062DD24 /* Authenticated.storyboard */; };
+		EDBDBF452101926C0097A63F /* IMG_0024.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EDBDBF442101926C0097A63F /* IMG_0024.PNG */; };
+		EDBDBF472102F5400097A63F /* menu-rounded-solid.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBDBF462102F5400097A63F /* menu-rounded-solid.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,7 @@
 		D4641719E1D26245646A76AC /* Pods_Builder_Notifications.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Builder_Notifications.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C99BED8424C9BA63E2DB12 /* Pods-Builder Notifications.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder Notifications.release.xcconfig"; path = "Pods/Target Support Files/Pods-Builder Notifications/Pods-Builder Notifications.release.xcconfig"; sourceTree = "<group>"; };
 		DBE57A97558EE94840AF2FC2 /* Pods-Builder NotificationsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Builder NotificationsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Builder NotificationsUITests/Pods-Builder NotificationsUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED0111302101895700D6790F /* IMG_2498.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_2498.PNG; sourceTree = "<group>"; };
 		ED4AC1CC20EA01B100B5DBFB /* Builder Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Builder Notifications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED4AC1CF20EA01B100B5DBFB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED4AC1D120EA01B100B5DBFB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		ED86D26820EB59810062DD24 /* leveldb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = leveldb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED86D26F20EB902E0062DD24 /* AuthenticatedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatedViewController.swift; sourceTree = "<group>"; };
 		ED86D27120EB97E60062DD24 /* Authenticated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authenticated.storyboard; sourceTree = "<group>"; };
+		EDBDBF442101926C0097A63F /* IMG_0024.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0024.PNG; sourceTree = "<group>"; };
+		EDBDBF462102F5400097A63F /* menu-rounded-solid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-rounded-solid.png"; sourceTree = "<group>"; };
 		EDFE34A420EB393000913A74 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = ../../../Downloads/Firebase/Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -172,6 +178,9 @@
 		ED4AC1CE20EA01B100B5DBFB /* Builder Notifications */ = {
 			isa = PBXGroup;
 			children = (
+				EDBDBF462102F5400097A63F /* menu-rounded-solid.png */,
+				ED0111302101895700D6790F /* IMG_2498.PNG */,
+				EDBDBF442101926C0097A63F /* IMG_0024.PNG */,
 				ED72D31A20F46C10002ECAD0 /* Builder Notifications.entitlements */,
 				ED72D31B20F4855B002ECAD0 /* GoogleService-Info.plist */,
 				ED4AC20C20EB2D0A00B5DBFB /* module.modulemap */,
@@ -319,9 +328,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0111312101895800D6790F /* IMG_2498.PNG in Resources */,
 				ED4AC1DA20EA01B300B5DBFB /* LaunchScreen.storyboard in Resources */,
 				ED4AC1D720EA01B300B5DBFB /* Assets.xcassets in Resources */,
 				ED72D31C20F4855B002ECAD0 /* GoogleService-Info.plist in Resources */,
+				EDBDBF472102F5400097A63F /* menu-rounded-solid.png in Resources */,
+				EDBDBF452101926C0097A63F /* IMG_0024.PNG in Resources */,
 				ED86D27220EB97E60062DD24 /* Authenticated.storyboard in Resources */,
 				ED4AC1D520EA01B100B5DBFB /* Main.storyboard in Resources */,
 			);
@@ -608,7 +620,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Builder Notifications/Builder Notifications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YHUCWKS8V3;
+				DEVELOPMENT_TEAM = ER3JWQ8BGQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Builder\\ Notifications",
@@ -637,7 +649,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Builder Notifications/Builder Notifications.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = YHUCWKS8V3;
+				DEVELOPMENT_TEAM = ER3JWQ8BGQ;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Builder\\ Notifications",
