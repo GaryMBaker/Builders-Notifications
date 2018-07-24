@@ -32,6 +32,7 @@
 		ED86D27220EB97E60062DD24 /* Authenticated.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED86D27120EB97E60062DD24 /* Authenticated.storyboard */; };
 		EDBDBF452101926C0097A63F /* IMG_0024.PNG in Resources */ = {isa = PBXBuildFile; fileRef = EDBDBF442101926C0097A63F /* IMG_0024.PNG */; };
 		EDBDBF472102F5400097A63F /* menu-rounded-solid.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBDBF462102F5400097A63F /* menu-rounded-solid.png */; };
+		EDBDBF4921031A580097A63F /* 1_WwOMYgx4AIf6SBn0e6IUJA.png in Resources */ = {isa = PBXBuildFile; fileRef = EDBDBF4821031A570097A63F /* 1_WwOMYgx4AIf6SBn0e6IUJA.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		ED86D27120EB97E60062DD24 /* Authenticated.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Authenticated.storyboard; sourceTree = "<group>"; };
 		EDBDBF442101926C0097A63F /* IMG_0024.PNG */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = IMG_0024.PNG; sourceTree = "<group>"; };
 		EDBDBF462102F5400097A63F /* menu-rounded-solid.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menu-rounded-solid.png"; sourceTree = "<group>"; };
+		EDBDBF4821031A570097A63F /* 1_WwOMYgx4AIf6SBn0e6IUJA.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_WwOMYgx4AIf6SBn0e6IUJA.png; sourceTree = "<group>"; };
 		EDFE34A420EB393000913A74 /* Firebase.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = ../../../Downloads/Firebase/Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				EDBDBF462102F5400097A63F /* menu-rounded-solid.png */,
+				EDBDBF4821031A570097A63F /* 1_WwOMYgx4AIf6SBn0e6IUJA.png */,
 				ED0111302101895700D6790F /* IMG_2498.PNG */,
 				EDBDBF442101926C0097A63F /* IMG_0024.PNG */,
 				ED72D31A20F46C10002ECAD0 /* Builder Notifications.entitlements */,
@@ -345,6 +348,7 @@
 				EDBDBF452101926C0097A63F /* IMG_0024.PNG in Resources */,
 				ED86D27220EB97E60062DD24 /* Authenticated.storyboard in Resources */,
 				ED4AC1D520EA01B100B5DBFB /* Main.storyboard in Resources */,
+				EDBDBF4921031A580097A63F /* 1_WwOMYgx4AIf6SBn0e6IUJA.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
