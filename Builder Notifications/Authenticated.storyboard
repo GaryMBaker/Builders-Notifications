@@ -222,6 +222,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1hX-8b-4wF"/>
                     </view>
+                    <connections>
+                        <outlet property="post" destination="xdn-UA-YBt" id="rBV-EY-X6T"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="krz-Zh-brf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -819,6 +822,6 @@
     <inferredMetricsTieBreakers>
         <segue reference="b1s-0h-Zgl"/>
         <segue reference="PAh-RC-CJ3"/>
-        <segue reference="NCB-hJ-RR6"/>
+        <segue reference="yLr-BC-eLM"/>
     </inferredMetricsTieBreakers>
 </document>
